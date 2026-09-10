@@ -10,7 +10,7 @@ import {
   parseState,
 } from '../src/model.js';
 
-describe('ShelfWise unit-price model', () => {
+describe('AisleMath unit-price model', () => {
   it('normalizes mixed weight units to grams', () => {
     expect(normalizedAmount(createItem({ amount: 1, unit: 'kg' }))).toBe(1000);
     expect(normalizedAmount(createItem({ amount: 16, unit: 'oz' }))).toBeCloseTo(453.59237, 5);

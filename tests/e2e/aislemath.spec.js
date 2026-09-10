@@ -34,7 +34,7 @@ test('compares mixed package sizes, ranks the winner, and downloads CSV', async 
   const downloadPromise = page.waitForEvent('download');
   await page.locator('#download-csv').click();
   const download = await downloadPromise;
-  expect(download.suggestedFilename()).toBe('shelfwise-comparison.csv');
+  expect(download.suggestedFilename()).toBe('aislemath-comparison.csv');
   expect(await download.path()).toBeTruthy();
 });
 

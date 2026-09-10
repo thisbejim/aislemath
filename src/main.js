@@ -15,7 +15,7 @@ window.__consoleErrors = [];
 window.addEventListener('error', (event) => window.__consoleErrors.push(String(event.error?.message || event.message || 'Unknown error')));
 window.addEventListener('unhandledrejection', (event) => window.__consoleErrors.push(String(event.reason?.message || event.reason || 'Unhandled promise rejection')));
 
-const STORAGE_KEY = 'shelfwise-state-v1';
+const STORAGE_KEY = 'aislemath-state-v1';
 const CURRENCY_SYMBOLS = { AUD: 'A$', USD: '$', CAD: 'C$', GBP: '£', EUR: '€', NZD: 'NZ$', INR: '₹', JPY: '¥' };
 const KIND_LABELS = { mass: 'weight', volume: 'volume', count: 'count' };
 
@@ -116,7 +116,7 @@ refs.downloadCsv.addEventListener('click', () => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'shelfwise-comparison.csv';
+  link.download = 'aislemath-comparison.csv';
   document.body.append(link);
   link.click();
   link.remove();
@@ -557,7 +557,7 @@ function formatUnitPrice(result) {
 }
 
 function buildSummaryText(comparison) {
-  const lines = ['ShelfWise grocery comparison', ''];
+  const lines = ['AisleMath grocery comparison', ''];
   if (comparison.hasMixedKinds) {
     lines.push('Best value by type:');
     comparison.winners.forEach((winner) => lines.push(`- ${KIND_LABELS[winner.kind]}: ${winner.name} — ${formatUnitPrice(winner)}`));
@@ -566,7 +566,7 @@ function buildSummaryText(comparison) {
   }
   lines.push(`Plan total (all entered rows): ${formatMoney(comparison.allBasketTotal)}`);
   if (comparison.basketSavings > 0) lines.push(`Promotion savings: ${formatMoney(comparison.basketSavings)}`);
-  lines.push('', 'Prices and calculations supplied by the shopper. ShelfWise is not a live price feed.');
+  lines.push('', 'Prices and calculations supplied by the shopper. AisleMath is not a live price feed.');
   return lines.join('\n');
 }
 

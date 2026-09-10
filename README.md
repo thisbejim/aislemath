@@ -1,8 +1,8 @@
-# ShelfWise
+# AisleMath
 
-**Use it here: https://thisbejim.github.io/shelfwise/**
+**Use it here: https://thisbejim.github.io/aislemath/**
 
-ShelfWise is a free grocery unit price calculator for comparing package sizes, mixed weight/volume units, and promotions such as “2 for $5”, buy-one-get-one, percentage discounts, and coupons. It also shows what the entered number of packs would cost in the basket.
+AisleMath is a free grocery unit price calculator for comparing package sizes, mixed weight/volume units, and promotions such as “2 for $5”, buy-one-get-one, percentage discounts, and coupons. It also shows what the entered number of packs would cost in the basket.
 
 ## Why this tool exists
 
@@ -14,11 +14,11 @@ The strongest search results we reviewed prove the need but leave practical gaps
 - [ToolVaults](https://toolvaults.net/calculators/unit-price/) ranks multiple rows but asks shoppers to convert units themselves and does not model promotions.
 - [Cartlyt](https://www.cartlyt.com/unit-price-calculator) presents unit pricing inside a broader product with a free trial and paid plan.
 
-ShelfWise is the focused alternative: enter the facts printed on the shelf, normalize unlike units, apply the real promotion, and see the arithmetic without an account, ads, price feed, or upload.
+AisleMath is the focused alternative: enter the facts printed on the shelf, normalize unlike units, apply the real promotion, and see the arithmetic without an account, ads, price feed, or upload.
 
 ### Product thesis
 
-For budget-conscious grocery shoppers, ShelfWise turns shelf prices and package sizes—including multi-buy deals—into a transparent comparison and basket estimate better than mental math or single-item calculators because it handles the messy promotions and mixed units people actually encounter.
+For budget-conscious grocery shoppers, AisleMath turns shelf prices and package sizes—including multi-buy deals—into a transparent comparison and basket estimate better than mental math or single-item calculators because it handles the messy promotions and mixed units people actually encounter.
 
 ## What it does
 
@@ -33,7 +33,7 @@ For budget-conscious grocery shoppers, ShelfWise turns shelf prices and package 
 
 ## Privacy and independence
 
-ShelfWise is a static browser application. The calculations, rendering, clipboard text, CSV generation, and share-state encoding all happen in the tab. It has no backend, API key, account, payment flow, analytics, advertising, cookies, or required third-party runtime service. Price and item data remain on the device unless a user deliberately copies a share URL or downloaded file.
+AisleMath is a static browser application. The calculations, rendering, clipboard text, CSV generation, and share-state encoding all happen in the tab. It has no backend, API key, account, payment flow, analytics, advertising, cookies, or required third-party runtime service. Price and item data remain on the device unless a user deliberately copies a share URL or downloaded file.
 
 The result is a transparent comparison, not a live price feed or financial recommendation. Shelf life, storage, quality, and what a shopper can afford today still matter.
 
@@ -48,7 +48,7 @@ npm run build
 npm run dev
 ```
 
-The Vite development server serves the app at `http://localhost:5173`. The production build is the ordinary static files in `dist/` and uses a relative base so the project works at the GitHub Pages `/shelfwise/` path.
+The Vite development server serves the app at `http://localhost:5173`. The production build is the ordinary static files in `dist/` and uses a relative base so the project works at the GitHub Pages `/aislemath/` path.
 
 ## Testing and validation
 
@@ -87,4 +87,4 @@ The final opportunity passed the hard quality gate before implementation:
 | Maintainability | 9/10 | Small dependency surface, plain modules, no external data feed, and a static deployment. |
 | Expected public value | 9/10 | A free, private answer to a recurring purchase decision with a clear reason to exist. |
 
-Several other researched ideas were rejected because their current local-first competitors were already unusually strong (address-label printing, audio trimming, contact sheets, invoice generation, and duplicate-photo finding) or because their best version depended on changing external data. ShelfWise had the clearest remaining mismatch between task demand and a complete, promotion-aware, zero-friction workflow.
+Several other researched ideas were rejected because their current local-first competitors were already unusually strong (address-label printing, audio trimming, contact sheets, invoice generation, and duplicate-photo finding) or because their best version depended on changing external data. AisleMath had the clearest remaining mismatch between task demand and a complete, promotion-aware, zero-friction workflow.
