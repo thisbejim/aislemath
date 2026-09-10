@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f6f2" />
+    <title>Grocery Unit Price Calculator | Compare Deals &amp; Package Sizes | AisleMath</title>
+    <meta name="description" content="Compare grocery package sizes, mixed units, and multi-buy deals with a transparent unit price calculator. Free, private, and no account required." />
+    <link rel="canonical" href="https://thisbejim.github.io/aislemath/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AisleMath — Grocery Unit Price Calculator" />
+    <meta property="og:description" content="See the real price per 100 g, 100 ml, or item. Compare package sizes and sale deals without an account." />
+    <meta property="og:url" content="https://thisbejim.github.io/aislemath/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="AisleMath — Grocery Unit Price Calculator" />
+    <meta name="twitter:description" content="Compare grocery package sizes and deals with clear, private unit-price math." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231c514a'/%3E%3Cpath d='M17 17h30v8H25v8h18v8H25v14h-8z' fill='%23f5f6f2'/%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AisleMath Grocery Unit Price Calculator",
+        "url": "https://thisbejim.github.io/aislemath/",
+        "applicationCategory": "ShoppingApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "A private browser-based calculator for comparing grocery unit prices, package sizes, and sale deals."
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-BYiXOkSK.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DSIEFNI0.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#calculator">Skip to calculator</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="./" aria-label="AisleMath home">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>AisleMath</span>
+        </a>
+        <nav class="top-nav" aria-label="Page navigation">
+          <a href="#how-it-works">How it works</a>
+          <a href="#privacy">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero shell" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">SHOP WITH CLARITY</p>
+          <h1 id="page-title">Grocery unit price calculator</h1>
+          <p class="hero-lede">Compare package sizes, mixed units, and sale deals in the time it takes to read a shelf label.</p>
+          <div class="trust-row" aria-label="AisleMath promises">
+            <span><span aria-hidden="true">✓</span> Free forever</span>
+            <span><span aria-hidden="true">✓</span> No account</span>
+            <span><span aria-hidden="true">✓</span> Runs in your browser</span>
+          </div>
+        </div>
+        <div class="hero-note" role="note">
+          <span class="note-icon" aria-hidden="true">◎</span>
+          <div>
+            <strong>Your prices stay on this device.</strong>
+            <p>AisleMath does not upload, track, or store your shopping data on a server.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator" class="shell calculator-section" aria-labelledby="calculator-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE CALCULATOR</p>
+            <h2 id="calculator-title">Which option is the better deal?</h2>
+          </div>
+          <div class="global-controls">
+            <label class="compact-field">
+              <span>Currency</span>
+              <select id="currency" aria-label="Currency">
+                <option value="AUD">A$ Australian dollar</option>
+                <option value="USD">$ US dollar</option>
+                <option value="CAD">C$ Canadian dollar</option>
+                <option value="GBP">£ British pound</option>
+                <option value="EUR">€ Euro</option>
+                <option value="NZD">NZ$ New Zealand dollar</option>
+                <option value="INR">₹ Indian rupee</option>
+                <option value="JPY">¥ Japanese yen</option>
+              </select>
+            </label>
+            <label class="compact-field">
+              <span>Show prices as</span>
+              <select id="basis" aria-label="Unit price display basis">
+                <option value="auto">Automatic (per 100 g / 100 ml / item)</option>
+                <option value="per100">Per 100 g / 100 ml</option>
+                <option value="per1">Per g / ml / item</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="workspace-grid">
+          <section class="card entry-card" aria-labelledby="items-title">
+            <div class="card-heading">
+              <div>
+                <h3 id="items-title">Add the options on the shelf</h3>
+                <p class="muted">Enter the package price and total amount. Add the deal only when one applies.</p>
+              </div>
+              <span id="item-count" class="count-badge">0 options</span>
+            </div>
+
+            <div class="quick-starts" aria-label="Quick starts">
+              <span class="quick-label">Try an example:</span>
+              <button class="chip" type="button" data-example="cereal">Cereal sizes</button>
+              <button class="chip" type="button" data-example="paper">Paper towels</button>
+              <button class="chip" type="button" data-example="oil">Cooking oil</button>
+            </div>
+
+            <div id="items" class="items-list" aria-live="polite"></div>
+
+            <div class="entry-actions">
+              <button id="add-item" class="button button-secondary" type="button"><span aria-hidden="true">＋</span> Add another option</button>
+              <button id="clear-items" class="text-button" type="button">Clear all</button>
+            </div>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </section>
+
+          <section class="card result-card" aria-labelledby="results-title">
+            <div class="card-heading result-heading">
+              <div>
+                <p class="eyebrow">THE ANSWER</p>
+                <h3 id="results-title">Your comparison</h3>
+              </div>
+              <span id="result-kind" class="status-pill">Waiting for prices</span>
+            </div>
+
+            <div id="result-summary" class="result-summary" aria-live="polite">
+              <div class="empty-result">
+                <div class="empty-icon" aria-hidden="true">÷</div>
+                <strong>Add two options to see the better value.</strong>
+                <p>Use a quick start above if you want to see how deal math works.</p>
+              </div>
+            </div>
+
+            <div id="comparison-wrap" class="comparison-wrap is-hidden">
+              <div class="table-heading">
+                <h4>Ranked by true unit price</h4>
+                <span id="comparison-note" class="muted"></span>
+              </div>
+              <div class="table-scroll">
+                <table class="comparison-table">
+                  <caption class="sr-only">Grocery options ranked by unit price</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Option</th>
+                      <th scope="col">Effective price</th>
+                      <th scope="col">Unit price</th>
+                      <th scope="col">Buy</th>
+                      <th scope="col">Basket</th>
+                    </tr>
+                  </thead>
+                  <tbody id="comparison-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="insight" class="insight is-hidden" role="note"></div>
+
+            <div class="result-actions">
+              <button id="copy-result" class="button button-primary" type="button" disabled><span aria-hidden="true">⧉</span> Copy summary</button>
+              <button id="share-result" class="button button-secondary" type="button"><span aria-hidden="true">↗</span> Copy share link</button>
+              <button id="download-csv" class="button button-secondary" type="button" disabled><span aria-hidden="true">⇩</span> Download CSV</button>
+              <button id="print-result" class="button button-secondary" type="button"><span aria-hidden="true">▣</span> Print</button>
+            </div>
+          </section>
+        </div>
+        <p class="under-note"><strong>Tip:</strong> “Buy” is how many packs you plan to put in your basket. The comparison uses one pack so a multi-buy does not look cheaper just because you bought more.</p>
+      </section>
+
+      <section id="how-it-works" class="shell explainer" aria-labelledby="how-title">
+        <div class="explainer-intro">
+          <p class="eyebrow">A FAIR COMPARISON</p>
+          <h2 id="how-title">Sticker price is only half the story.</h2>
+          <p>Unit price puts every shelf label on the same ruler. AisleMath also handles the promotions that make ordinary mental math unreliable.</p>
+        </div>
+        <div class="explainer-grid">
+          <article class="info-card">
+            <span class="info-number">01</span>
+            <h3>Normalize the size</h3>
+            <p>12 oz, 500 g, and 1 lb can be compared together. We convert them to a common base unit; weight, volume, and count stay separate because they measure different things.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-number">02</span>
+            <h3>Apply the real deal</h3>
+            <p>“2 for $5”, buy-one-get-one, percentage discounts, and coupons are translated into an effective price per pack before ranking.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-number">03</span>
+            <h3>Show the trade-off</h3>
+            <p>See what you would spend for the number of packs you need, how much the winner saves, and whether the bigger box is actually the better buy.</p>
+          </article>
+        </div>
+        <div class="formula-card">
+          <div>
+            <p class="eyebrow">THE MATH, VISIBLE</p>
+            <h3>Effective unit price = deal-adjusted pack price ÷ normalized package size</h3>
+          </div>
+            <p>There is no hidden recommendation engine or price feed. You provide the shelf facts; AisleMath shows the arithmetic and keeps your list in this browser.</p>
+        </div>
+      </section>
+
+      <section id="privacy" class="shell faq-section" aria-labelledby="faq-title">
+        <div class="faq-heading">
+          <p class="eyebrow">GOOD TO KNOW</p>
+          <h2 id="faq-title">Questions people ask at the shelf</h2>
+        </div>
+        <div class="faq-grid">
+          <details open>
+            <summary>Does AisleMath send my prices anywhere?</summary>
+            <p>No. Calculations happen in this tab. A draft is saved only in your browser’s local storage so it can still be here when you return. A share link contains your entered comparison only when you explicitly copy it.</p>
+          </details>
+          <details>
+            <summary>Can I compare grams with ounces?</summary>
+            <p>Yes. Weight units are converted to grams, and volume units to millilitres. AisleMath will not compare a weight item with a volume item because that would require guessing a product’s density.</p>
+          </details>
+          <details>
+            <summary>How should I enter a multi-buy?</summary>
+            <p>Enter the ordinary shelf price, choose “Multi-buy”, then enter the number of packs and the advertised deal price. For example, “2 for $5” means deal packs 2 and deal price 5.</p>
+          </details>
+          <details>
+            <summary>Is the cheapest unit price always the best choice?</summary>
+            <p>Not necessarily. Shelf life, storage space, quality, and what you can afford today matter too. The tool gives you a transparent price comparison, not a command to buy more.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p><strong>AisleMath</strong> is free and open source.</p>
+        <p><a href="https://github.com/thisbejim/aislemath">Source on GitHub</a><span aria-hidden="true"> · </span><a href="#calculator">Back to calculator ↑</a></p>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
