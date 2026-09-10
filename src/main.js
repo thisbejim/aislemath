@@ -418,7 +418,7 @@ function renderSummary(comparison) {
     grid.append(summaryTile('Best value', winner?.name || '—', winner ? formatUnitPrice(winner) : '—', true));
   }
   const packCount = comparison.valid.reduce((sum, result) => sum + result.basket.quantity, 0);
-  grid.append(summaryTile('List total', formatMoney(comparison.allBasketTotal), `${packCount} pack${packCount === 1 ? '' : 's'} entered`));
+  grid.append(summaryTile('Plan total', formatMoney(comparison.allBasketTotal), `${packCount} pack${packCount === 1 ? '' : 's'} if every row is bought`));
   const dealSavings = comparison.basketSavings;
   grid.append(summaryTile(dealSavings > 0 ? 'Deal savings' : 'Promotion savings', dealSavings > 0 ? formatMoney(dealSavings) : '—', dealSavings > 0 ? 'vs regular shelf prices' : 'No active promotion', false));
   refs.resultSummary.append(grid);
@@ -564,7 +564,7 @@ function buildSummaryText(comparison) {
   } else if (comparison.bestOverall) {
     lines.push(`Best value: ${comparison.bestOverall.name} — ${formatUnitPrice(comparison.bestOverall)}`);
   }
-  lines.push(`List total: ${formatMoney(comparison.allBasketTotal)}`);
+  lines.push(`Plan total (all entered rows): ${formatMoney(comparison.allBasketTotal)}`);
   if (comparison.basketSavings > 0) lines.push(`Promotion savings: ${formatMoney(comparison.basketSavings)}`);
   lines.push('', 'Prices and calculations supplied by the shopper. ShelfWise is not a live price feed.');
   return lines.join('\n');

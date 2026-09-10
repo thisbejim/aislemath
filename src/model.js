@@ -251,6 +251,7 @@ export function serializeState(state) {
 
 export function parseState(raw) {
   try {
+    if (typeof raw !== 'string' || raw.length > 20000) return null;
     const parsed = JSON.parse(raw);
     if (!parsed || !Array.isArray(parsed.items)) return null;
     const items = parsed.items.slice(0, 20).map((item) => createItem({
@@ -261,7 +262,7 @@ export function parseState(raw) {
       deal: ['none', 'multi', 'bogo', 'percent', 'coupon'].includes(item?.deal) ? item.deal : 'none',
     }));
     return {
-      currency: typeof parsed.currency === 'string' ? parsed.currency : 'AUD',
+      currency: ['AUD', 'USD', 'CAD', 'GBP', 'EUR', 'NZD', 'INR', 'JPY'].includes(parsed.currency) ? parsed.currency : 'AUD',
       basis: ['auto', 'per100', 'per1'].includes(parsed.basis) ? parsed.basis : 'auto',
       items: items.length ? items : [createItem()],
     };

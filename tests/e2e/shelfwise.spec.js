@@ -64,6 +64,13 @@ test('loads the cereal example and copies a share link', async ({ page }) => {
   await expect(page.locator('#toast')).toContainText('Share link copied');
 });
 
+test('stays within the viewport on a narrow phone', async ({ page }) => {
+  await page.locator('[data-example="paper"]').click();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+  expect(overflow).toBe(false);
+  await expect(page.locator('#comparison-wrap')).toBeVisible();
+});
+
 test('has no automated accessibility violations on desktop and mobile', async ({ page }) => {
   const results = await new AxeBuilder({ page }).analyze();
   expect(results.violations).toEqual([]);
