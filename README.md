@@ -59,7 +59,7 @@ The Vite development server serves the app at `http://localhost:5173`. The produ
 
 ## GitHub Pages deployment
 
-Pushes to `main` run [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which installs from the lockfile, runs the model tests, builds `dist/`, and deploys it with the official GitHub Pages actions. The site is published at the URL at the top of this README.
+GitHub Pages is configured from the repository’s `gh-pages` branch. To publish a fresh build, run `npm ci`, `npm test`, `npm run build`, copy the contents of `dist/` to the branch root, and push `gh-pages`. The site is published at the URL at the top of this README.
 
 ## License
 
