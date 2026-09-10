@@ -1,0 +1,21 @@
+{
+  "name": "shelfwise",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A private grocery unit-price and deal comparison calculator.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "vite": "^6.4.3",
+    "vitest": "^4.1.11"
+  }
+}
